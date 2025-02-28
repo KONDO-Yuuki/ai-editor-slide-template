@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI エディタを使って爆速でスライドを作る</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <!-- タイトルスライド -->
+        <section>
+          <h1>AI エディタを使って爆速でスライドを作る</h1>
+        </section>
+
+        <!-- 自己紹介 -->
+        <section>
+          <h2>自己紹介</h2>
+          <div class="two-column">
+            <div>
+              <ul>
+                <li>twitter: @kondo_script</li>
+                <li>所属：株式会社 NoSchool</li>
+                <li>職業：エンジニアリングマネージャ</li>
+                <li>趣味：スパゲッティを料理すること</li>
+              </ul>
+            </div>
+            <div>
+              <img src="./images/pasta.jpg" alt="パスタの画像" />
+            </div>
+          </div>
+        </section>
+
+        <!-- 今日のテーマ -->
+        <section>
+          <h2>今日のテーマ</h2>
+          <p>AI エディタを使って爆速でスライドを作ってみた話</p>
+        </section>
+
+        <!-- 使った技術 -->
+        <section>
+          <h2>使った技術</h2>
+          <ul>
+            <li>bolt.new</li>
+            <li>cursor</li>
+          </ul>
+        </section>
+
+        <!-- bolt.new -->
+        <section data-auto-animate>
+          <h2>bolt.new</h2>
+          <p>以下のプロンプトでボイラープレートを作成</p>
+          <pre><code data-trim data-noescape>
+reveal.js を使ったスライド作成のテンプレートを作ってください
+
+エンジニアが使う前提で、package.jsonに起動コマンドが書いてある
+ローカルでプレゼンテーションをする用途
+以下の動作サンプルを含むページがすでにある状態
+画像の読み込み
+文字のアニメーション
+画面切り替え時のアニメーション
+上記の使い方をまとめた日本語のREADME
+          </code></pre>
+          <aside class="notes">
+            - 生成後に local に clone - 手動で PROMPT.md と speaker_note.md
+            を追加
+          </aside>
+        </section>
+
+        <!-- まとめ -->
+        <section>
+          <h2>まとめ</h2>
+          <ul>
+            <li class="fragment">AI コーディングはメタプログラミング</li>
+            <li class="fragment">エンジニアが使うツールとの相性が抜群</li>
+          </ul>
+          <aside class="notes">
+            - AI コーディングはメタプログラミング -
+            適切な抽象化をして指示を出せば出すほど AI の恩恵を受けられる -
+            今回プロンプトと speaker_note は自作したが、これも ChatGPT
+            なりなんなり書かせてもよかったもよかった
+          </aside>
+        </section>
+      </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
