@@ -41,17 +41,52 @@
         <!-- 使った技術 -->
         <section>
           <h2>使った技術</h2>
-          <ul>
-            <li>bolt.new</li>
-            <li>cursor</li>
-          </ul>
+          <div class="tech-stack">
+            <ul>
+              <li>cursor</li>
+              <li>bolt.new</li>
+              <li>(reveal.js)</li>
+            </ul>
+            <div class="tech-icons">
+              <img src="./images/cursor.jpg" alt="Cursorのアイコン" />
+              <img src="./images/bolt.png" alt="Boltのアイコン" />
+            </div>
+          </div>
+          <aside class="notes">
+            cursor はご存知 AI エディタです<br />
+            bolt
+            はプロトタイピングに特化したコード生成サービス。使わなくても良いかも<br />
+            reveal.js
+            も一応使ってますが、特に話の本筋ではないので深く触れません。生成 AI
+            のこと考えて一番ネット上に情報が多そうなのを npm trends
+            見て選びました。ちなみに私は今までずっと google slide 派でした
+          </aside>
         </section>
 
-        <!-- bolt.new -->
-        <section data-auto-animate>
-          <h2>bolt.new</h2>
-          <p>以下のプロンプトでボイラープレートを作成</p>
-          <pre><code data-trim data-noescape>
+        <!-- やったこと -->
+        <section>
+          <h2>やったこと</h2>
+          <ul>
+            <li class="fragment">bolt.new でボイラープレートを作成</li>
+            <li class="fragment">.cursor/rules を作成</li>
+            <li class="fragment">
+              speaker_note.md を書いて cursor に変換させる
+            </li>
+            <li class="fragment fade-up highlight-blue">
+              このスライドが完成!!!
+            </li>
+          </ul>
+          <aside class="notes">
+            ちなみに今のアニメーションは cursor
+            に「お前のセンスでカッコよく目立たせてくれ」と無茶振りしてます<br />
+            では詳細に見ていきましょう
+          </aside>
+        </section>
+
+        <!-- bolt.new でボイラープレートを作成 -->
+        <section>
+          <h2>bolt.new でボイラープレートを作成</h2>
+          <pre><code class="markdown">
 reveal.js を使ったスライド作成のテンプレートを作ってください
 
 エンジニアが使う前提で、package.jsonに起動コマンドが書いてある
@@ -63,24 +98,109 @@ reveal.js を使ったスライド作成のテンプレートを作ってくだ�
 上記の使い方をまとめた日本語のREADME
           </code></pre>
           <aside class="notes">
-            - 生成後に local に clone - 手動で PROMPT.md と speaker_note.md
-            を追加
+            生成後に local に ダウンロードして clone しました<br />
+            手動で書いたのは .cursor/rules だけです
           </aside>
+        </section>
+
+        <!-- .cursor/rules を作成 -->
+        <section>
+          <h2>.cursor/rules を作成</h2>
+          <pre><code class="markdown">
+speaker_note.md はとあるエンジニアがスピーチをする上で作成されたメモです。
+speaker_note.md は以下のルールで書かれています。
+
+- 見出しレベル 1 はスライド自身のタイトルです
+- 見出しレベル 2 はスライドのページのタイトルです
+- 見出しレベル 3、(notesと書かれているもの) はスライドに表示しないスピーカーノートです。
+- コメントは補足事項です。スライド作成の際に参考にしてください
+          </code></pre>
+          <aside class="notes">
+            こんな感じでルールを自分で考えました。<br />
+            コメントを補足として扱うのが体験が良かったです。
+          </aside>
+        </section>
+
+        <!-- speaker_note.md を書いて cursor に変換させる (1/2) -->
+        <section>
+          <h2>speaker_note.md を書いて cursor に変換させる (1/2)</h2>
+          <pre><code class="markdown">
+# AI エディタを使って爆速でスライドを作る
+
+## 自己紹介
+
+twitter: @kondo_script
+
+- 株式会社 NoSchool
+- エンジニアリングマネージャ
+- スパゲッティを料理すること
+
+&lt;!-- images/pasta.jpgを趣味の横に配置してください --&gt;
+          </code></pre>
+        </section>
+
+        <!-- speaker_note.md を書いて cursor に変換させる (2/2) -->
+        <section>
+          <h2>speaker_note.md を書いて cursor に変換させる (2/2)</h2>
+          <pre><code class="html">
+&lt;title&gt;AI エディタを使って爆速でスライドを作る&lt;/title&gt;
+&lt;link rel="stylesheet" href="./style.css" /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="reveal"&gt;
+    &lt;div class="slides"&gt;
+      &lt;!-- タイトルスライド --&gt;
+      &lt;section&gt;
+        &lt;h1&gt;AI エディタを使って爆速でスライドを作る&lt;/h1&gt;
+      &lt;/section&gt;
+
+      &lt;!-- 自己紹介 --&gt;
+      &lt;section&gt;
+        &lt;h2&gt;自己紹介&lt;/h2&gt;
+        &lt;div class="two-column"&gt;
+          &lt;div&gt;
+            &lt;ul&gt;
+              &lt;li&gt;twitter: @kondo_script&lt;/li&gt;
+              &lt;li&gt;所属：株式会社 NoSchool&lt;/li&gt;
+              &lt;li&gt;職業：エンジニアリングマネージャ&lt;/li&gt;
+              &lt;li&gt;趣味：スパゲッティを料理すること&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/div&gt;
+          &lt;div&gt;
+          </code></pre>
         </section>
 
         <!-- まとめ -->
         <section>
           <h2>まとめ</h2>
           <ul>
-            <li class="fragment">AI コーディングはメタプログラミング</li>
+            <li class="fragment">
+              AI コーディングは新時代のメタプログラミング
+            </li>
             <li class="fragment">エンジニアが使うツールとの相性が抜群</li>
           </ul>
           <aside class="notes">
-            - AI コーディングはメタプログラミング -
-            適切な抽象化をして指示を出せば出すほど AI の恩恵を受けられる -
-            今回プロンプトと speaker_note は自作したが、これも ChatGPT
-            なりなんなり書かせてもよかったもよかった
+            というか今回の感想です<br /><br />
+            AI コーディングはメタプログラミング<br />
+            - 適切な抽象化をして指示を出せば出すほど AI の恩恵を受けられる<br />
+            - 今回 cursor/rules と speaker_note は自作したが、これも ChatGPT
+            なりなんなり書かせてもよかったもよかった<br /><br />
+            エンジニア向けのツールと相性抜群<br />
+            - 解釈を伝えやすい<br />
+            - アウトプットの微妙なズレの微調整はこちらで巻き取れる。HTML
+            が壊れた話
           </aside>
+        </section>
+
+        <!-- おまけ -->
+        <section
+          data-background-gradient="linear-gradient(to bottom right, #1a237e, #0d47a1)"
+        >
+          <h2 style="color: white">おまけ</h2>
+          <p style="color: white">
+            この speaker_note を食わせてそのまま zenn
+            の記事を書く予定です。お楽しみに。
+          </p>
         </section>
       </div>
     </div>
